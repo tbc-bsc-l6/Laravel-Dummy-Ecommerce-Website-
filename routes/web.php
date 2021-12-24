@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('product', [ProductController::class, 'addProduct']);
+// Route::post('product', [ProductController::class, 'addProduct']);
 
-Route::get('products', [ProductController::class, 'displayProduct']);
+// Route::get('products', [ProductController::class, 'displayProduct']);
+
+Route::resource('product', ProductController::class);
