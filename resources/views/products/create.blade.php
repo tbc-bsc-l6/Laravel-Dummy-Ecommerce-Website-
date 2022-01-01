@@ -7,9 +7,8 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/product" method="post">
         @csrf
-        @method('put')
         <select name="product">
             <option value="Book">Book</option>
             <option value="Cd">CD</option>

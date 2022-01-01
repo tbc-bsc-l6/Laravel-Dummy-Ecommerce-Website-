@@ -20,5 +20,7 @@
         <input type="number" name="price" placeholder="Price"><br><br>
         <input type="submit" value="Post">
     </form>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
 </body>
 </html>

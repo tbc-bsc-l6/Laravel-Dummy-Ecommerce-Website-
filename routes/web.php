@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::post('product', [ProductController::class, 'addProduct']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// Route::get('products', [ProductController::class, 'displayProduct']);
-
-Route::resource('product', ProductController::class);
+require __DIR__.'/auth.php';

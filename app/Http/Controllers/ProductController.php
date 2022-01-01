@@ -39,14 +39,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product();
+        Product::create(request()->validate([
+            'product' => 'required',
+            'title' => 'required',
+            'name' => 'required',
+            'feature' => 'required',
+            'price' => 'required',
+        ]));
+
+        // $product = new Product();
         
-        $product->product = $request->product;
-        $product->title = $request->title;
-        $product->name = $request->name;
-        $product->feature = $request->feature;
-        $product->price = $request->price;
-        $product->save();
+        // $product->product = $request->product;
+        // $product->title = $request->title;
+        // $product->name = $request->name;
+        // $product->feature = $request->feature;
+        // $product->price = $request->price;
+        // $product->save();
 
         return Redirect::to('product');
     }
@@ -68,9 +76,9 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        
     }
 
     /**
