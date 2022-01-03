@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form</title>
-</head>
-<body>
-    <form action="/product" method="post">
+@extends('products.layout')
+
+@section('title')
+    Create page
+@endsection
+
+@section('body')
+    <form action="/products" method="post">
         @csrf
         <select name="product">
             <option value="Book">Book</option>
@@ -20,5 +18,4 @@
         <input type="number" name="price" placeholder="Price"><br><br>
         <input type="submit" value="Post">
     </form>
-</body>
-</html>
+@endsection

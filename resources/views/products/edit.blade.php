@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form</title>
-</head>
-<body>
-    <form action="" method="post">
+@extends('products.layout')
+
+@section('title')
+    Edit product
+@endsection
+
+@section('body')
+    <form action="/products/{{ $product->id }}" method="post">
         @csrf
         @method('put')
-        <select name="product">
-            <option value="Book">Book</option>
-            <option value="Cd">CD</option>
-            <option value="Game">Game</option>
+        <select name="product" required>
+            <option value="Book" @if ($product->product == "Book") selected @endif>Book</option>
+            <option value="Cd" @if ($product->product == "Cd") selected @endif>CD</option>
+            <option value="Game" @if ($product->product == "Game") selected @endif>Game</option>
         </select><br><br>
-        <input type="text" name="title" placeholder="Title"><br><br>
-        <input type="text" name="name" placeholder="Author/Artist/Console"><br><br>
-        <input type="text" name="feature" placeholder="Pages/Duration/PEGI"><br><br>
-        <input type="number" name="price" placeholder="Price"><br><br>
-        <input type="submit" value="Post">
+        <input type="text" name="title" placeholder="Title" value="{{ $product->title }}" required><br><br>
+        <input type="text" name="name" placeholder="Author/Artist/Console" value="{{ $product->name }}" required><br><br>
+        <input type="text" name="feature" placeholder="Pages/Duration/PEGI" value="{{ $product->feature }}" required><br><br>
+        <input type="number" name="price" placeholder="Price" value="{{ $product->price }}" required><br><br>
+        <input type="submit" value="Update">
     </form>
-</body>
-</html>
+@endsection

@@ -16,9 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-
-        return View::make('products.index')->with('products', $products);
+        $products = Product::latest()->get();
+        
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return View::make('products.create');
+        return view('products.create');
     }
 
     /**
@@ -39,68 +39,66 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create(request()->validate([
-            'product' => 'required',
-            'title' => 'required',
-            'name' => 'required',
-            'feature' => 'required',
-            'price' => 'required',
-        ]));
+        Product::create($this->validateProduct());
 
-        // $product = new Product();
-        
-        // $product->product = $request->product;
-        // $product->title = $request->title;
-        // $product->name = $request->name;
-        // $product->feature = $request->feature;
-        // $product->price = $request->price;
-        // $product->save();
-
-        return Redirect::to('product');
+        return redirect('products');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return view('products.show', ['product' => $product]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Product $product)
     {
-        
+        return view('products.edit', ['product' => $product]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->update($this->validateProduct());
+        return redirect('/products');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect('/products');
+    }
+
+    protected function validateProduct(){
+        return request()->validate([
+            'product' => 'required',
+            'title' => 'required',
+            'name' => 'required',
+            'feature' => 'required',
+            'price' => 'required',
+        ]);
     }
 }
