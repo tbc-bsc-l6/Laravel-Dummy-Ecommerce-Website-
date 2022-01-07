@@ -5,18 +5,44 @@
 @endsection
 
 @section('body')
-    <form action="/products/{{ $product->id }}" method="post">
-        @csrf
-        @method('put')
-        <select name="product" required>
-            <option value="Book" @if ($product->product == "Book") selected @endif>Book</option>
-            <option value="Cd" @if ($product->product == "Cd") selected @endif>CD</option>
-            <option value="Game" @if ($product->product == "Game") selected @endif>Game</option>
-        </select><br><br>
-        <input type="text" name="title" placeholder="Title" value="{{ $product->title }}" required><br><br>
-        <input type="text" name="name" placeholder="Author/Artist/Console" value="{{ $product->name }}" required><br><br>
-        <input type="text" name="feature" placeholder="Pages/Duration/PEGI" value="{{ $product->feature }}" required><br><br>
-        <input type="number" name="price" placeholder="Price" value="{{ $product->price }}" required><br><br>
-        <input type="submit" value="Update">
-    </form>
+    <div class="max-w-7xl mx-auto flex justify-center">
+        
+
+        <form action="/products/{{ $product->id }}" method="post" class="w-1/2 mt-20">
+            @csrf
+            @method('put')
+
+            <div class="w-full text-black text-5xl font-semibold">
+                <h1>Edit product</h1>
+            </div>
+            
+            <select name="product" class="w-full mt-6" required>
+                <option value="Book" @if ($product->product == "Book") selected @endif>Book</option>
+                <option value="Cd" @if ($product->product == "Cd") selected @endif>CD</option>
+                <option value="Game" @if ($product->product == "Game") selected @endif>Game</option>
+            </select><br><br>
+            
+            <input type="text" name="title" placeholder="Title" value="{{ $product->title }}" class="w-full" required><br><br>
+            @error('title')
+                <p class="text-red-600 text-xs">{{ $message }}</p>
+            @enderror
+            
+            <input type="text" name="name" placeholder="Author/Artist/Console" value="{{ $product->name }}" class="w-full" required><br><br>
+            @error('name')
+                <p class="text-red-600 text-xs">{{ $message }}</p>
+            @enderror
+            
+            <input type="text" name="feature" placeholder="Pages/Duration/PEGI" value="{{ $product->feature }}" class="w-full" required><br><br>
+            @error('feature')
+                <p class="text-red-600 text-xs">{{ $message }}</p>
+            @enderror
+            
+            <input type="number" name="price" placeholder="Price" value="{{ $product->price }}" class="w-full" required><br><br>
+            @error('price')
+                <p class="text-red-600 text-xs">{{ $message }}</p>
+            @enderror
+            
+            <input type="submit" value="Update" class="text-white bg-neutral-900 p-2 w-20 rounded">
+        </form>
+    </div>
 @endsection

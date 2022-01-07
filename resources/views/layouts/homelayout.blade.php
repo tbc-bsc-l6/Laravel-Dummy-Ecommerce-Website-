@@ -4,17 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="../../css/styles.css">
-    
     <title>
         @yield('title')
     </title>
-    <script>
-        let FF_FOUC_FIX;
-    </script>
 </head>
 <body>
     <section class="bg-neutral-900 flex justify-between">
@@ -32,15 +26,9 @@
             </ul>
         </div>
     </section>
-
+    
     @yield('body')
-    @if(session()->has('success'))
-    <div x-data="{ show: true }" 
-        x-init="setTimeout(()=>show = false, 3000)"
-        x-show="show">
-        <p class="fixed bg-gray-800 text-white rounded p-2 top-0 right-0">{{ session('success') }}</p>
-    </div>
-    @endif
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

@@ -41,6 +41,8 @@ class ProductController extends Controller
     {
         Product::create($this->validateProduct());
 
+        session()->flash('success', 'The product has been created.');
+
         return redirect('products');
     }
 
@@ -94,11 +96,11 @@ class ProductController extends Controller
 
     protected function validateProduct(){
         return request()->validate([
-            'product' => 'required',
-            'title' => 'required',
-            'name' => 'required',
-            'feature' => 'required',
-            'price' => 'required',
+            'product' => ['required'],
+            'title' => ['required', 'max:255'],
+            'name' => ['required', 'max:255'],
+            'feature' => ['required'],
+            'price' => ['required'],
         ]);
     }
 }

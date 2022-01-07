@@ -1,0 +1,43 @@
+.material-icons.delete{
+    color: darkred;
+}
+
+.material-icons.edit{
+    color: cornflowerblue;
+}
+
+.product-img-size{
+    width: fit-content;
+    height: 700px;
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.gap-16 {
+    gap: 4rem;
+}
+
+.h-60 {
+    height: 15rem/* 240px */;
+}
+
+.mx-20 {
+    margin-left: 5rem/* 80px */;
+    margin-right: 5rem/* 80px */;
+}
+
+.my-8 {
+    margin-top: 2rem/* 32px */;
+    margin-bottom: 2rem/* 32px */;
+}
+
+.px-20 {
+    padding-left: 5rem/* 80px */;
+    padding-right: 5rem/* 80px */;
+}
