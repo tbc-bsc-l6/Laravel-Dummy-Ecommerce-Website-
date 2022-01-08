@@ -30,6 +30,7 @@ Route::get('/', function () {
 });
 
 Route::get('/all-products', [HomepageController::class, 'getAllProducts']);
+// Route::get('/all-products', [HomepageController::class, 'searchProducts']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

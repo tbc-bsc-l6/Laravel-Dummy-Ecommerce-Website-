@@ -6,6 +6,10 @@
     color: cornflowerblue;
 }
 
+/* .material-icons.search{
+    font-size: 20px;
+} */
+
 .product-img-size{
     width: fit-content;
     height: 700px;
@@ -41,3 +45,19 @@
     padding-left: 5rem/* 80px */;
     padding-right: 5rem/* 80px */;
 }
+
+.border-b-white{
+    border: 0px solid transparent;
+    border-bottom: 0px solid white;
+}
+
+input:focus{
+    outline: 0;
+}
+
+.container {
+    display: grid;
+    grid-auto-columns: minmax(15rem, auto);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-gap: 3rem;
+  }

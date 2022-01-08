@@ -10,4 +10,12 @@ class Product extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function scopeSearch($query, array $filters){
+        if($filters['search'] ?? false){
+            $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('name', 'like', '%' . request('search') . '%');
+        }
+    }
 }

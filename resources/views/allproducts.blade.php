@@ -5,7 +5,7 @@
         <h1>All products</h1>
     </div>
 
-    <div class="grid grid-cols-6 gap-16 mx-20 my-8">
+    <div class="container gap-16 mx-20 my-8">
         @foreach ($allproducts as $product)
             <a href="/products/{{ $product->id }}">
                 <div class="overflow-hidden shadow-lg shadow-gray-700">
@@ -18,5 +18,9 @@
                 </div>
             </a>
         @endforeach
+    </div>
+
+    <div class="px-20 pb-3 mb-4">
+        {{ $allproducts->links() }}
     </div>
 @endsection
