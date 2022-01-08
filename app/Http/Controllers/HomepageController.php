@@ -11,11 +11,12 @@ class HomepageController extends Controller
         // $allproducts = Product::latest()->paginate(18);
         // $allproducts = Product::latest();
         
-        $allproducts = Product::latest()->search(request(['search']))->paginate(18);
+        $allproducts = Product::latest()->search(request(['search','category']))->paginate(12);
         return view('allproducts', ['allproducts'=> $allproducts]);
     }
 
-    // public function searchProducts(){
-        
+    // public function categorizeProducts(){
+    //     $allproducts = Product::latest()->category(request(['category']))->paginate(12);
+    //     return view('allproducts', ['allproducts'=> $allproducts]);
     // }
 }

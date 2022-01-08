@@ -29,7 +29,7 @@
             </div>
             <ul class="flex justify-end">
                 <li class="px-4"><a href="#">Home</a></li>
-                <li class="px-4"><a href="#">Products</a></li>
+                <li class="px-4"><a href="/all-products">Products</a></li>
                 <li class="px-4"><a href="/login">Login</a></li>
                 <li class="px-4"><a href="/register">Register</a></li>
             </ul>

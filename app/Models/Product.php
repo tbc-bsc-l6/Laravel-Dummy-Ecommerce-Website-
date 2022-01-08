@@ -17,5 +17,16 @@ class Product extends Model
                 ->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('name', 'like', '%' . request('search') . '%');
         }
+        if($filters['category'] ?? false){
+            $query
+                ->where('product', '=', request('category'));
+        }
     }
+
+    // public function scopeCategory($query, array $filters){
+    //     if($filters['category'] ?? false){
+    //         $query
+    //             ->where('product', '=', request('category'));
+    //     }
+    // }
 }

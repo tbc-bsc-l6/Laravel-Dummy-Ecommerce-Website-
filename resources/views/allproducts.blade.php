@@ -1,8 +1,27 @@
 @extends('layouts.homelayout')
 
 @section('body')
-    <div class="w-full px-20 mt-8 text-black text-5xl font-semibold">
-        <h1>All products</h1>
+    <div class="flex justify-between w-full px-20 mt-8 text-black text-5xl font-semibold">
+        <h1>
+            All products 
+            @if (request('category') ?? false)
+                @if (request('category') == "Book")
+                    (Books)
+                @elseif (request('category') == "Cd")
+                    (Cds)
+                @else
+                    (Games)
+                @endif
+            @endif
+        </h1>
+        <form action="" method="get">
+            <select name="category" id="" onchange="this.form.submit()">
+                <option selected disabled="disabled">Select a category</option>
+                <option value="Book" @if (request('category') == "Book") selected @endif>Books</option>
+                <option value="Cd" @if (request('category') == "Cd") selected @endif>Cds</option>
+                <option value="Game" @if (request('category') == "Game") selected @endif>Games</option>
+            </select>
+        </form>
     </div>
 
     <div class="container gap-16 mx-20 my-8">
