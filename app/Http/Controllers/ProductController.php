@@ -16,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::latest()->search(request(['search','category']))->paginate(12)->withQueryString();
         
         return view('products.index', ['products' => $products]);
     }

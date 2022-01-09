@@ -1,16 +1,16 @@
-@extends('layouts.homelayout')
+@extends('layouts.layout')
 
 @section('body')
     <div class="flex justify-between w-full px-20 mt-8 text-black text-5xl font-semibold">
         <h1>
-            All products 
+            <a href="/all-products">All products</a> 
             @if (request('category') ?? false)
                 @if (request('category') == "Book")
-                    (Books)
+                    / Books
                 @elseif (request('category') == "Cd")
-                    (Cds)
+                    / Cds
                 @else
-                    (Games)
+                    / Games
                 @endif
             @endif
         </h1>

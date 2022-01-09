@@ -60,4 +60,9 @@ input:focus{
     grid-auto-columns: minmax(15rem, auto);
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     grid-gap: 3rem;
+}
+
+.border-neutral-900 {
+    --tw-bg-opacity: 1;
+    border: rgb(23 23 23 / var(--tw-bg-opacity));
   }
