@@ -15,7 +15,13 @@
             <div class="px-8">
                 <div class="pt-6">
                     <h1 class="text-white text-5xl mt-6 font-semibold">{{ $product->title }}</h1>
-                    <p class="text-gray-100 text-md mt-6">By {{ $product->name }}</p>
+                    <p class="text-gray-100 text-md mt-6">
+                        @if ($product->product == "Game")
+                            On
+                        @else
+                            By
+                        @endif {{ $product->name }}
+                    </p>
                     
                     <h3 class="text-gray-100 text-2xl font-bold mt-10">${{ $product->price }}</h3>
                     

@@ -28,7 +28,7 @@ class ProductFactory extends Factory
             'title' => $this->faker->name(),
             'feature' => rand(5,50),
             'price' => rand(1,50),
-            'image' => $this->faker->randomElement(['1','2','3','4','5','6','7','8','9']),
+            'image' => rand(1,9),
         ];
     }
 }

@@ -6,18 +6,6 @@
 
 @section('body')
     <div class="max-w-7xl mx-auto">
-        {{-- <h1 class=" font-semibold text-5xl mt-10">
-            <a href="/all-products">All products</a> 
-            @if (request('category') ?? false)
-                @if (request('category') == "Book")
-                    / Books
-                @elseif (request('category') == "Cd")
-                    / Cds
-                @else
-                    / Games
-                @endif
-            @endif
-        </h1> --}}
         <div class="flex justify-between w-full mt-8 text-black text-5xl font-semibold">
             <h1>
                 <a href="/products">All products</a> 

@@ -31,7 +31,13 @@
                     <img src="../../images/{{ $product->image }}.jpg" alt="" class="w-full h-96 object-cover">
                     <div class="bg-neutral-900 p-2 text-center">
                         <p class=" text-white font-semibold text-lg">{{ $product->title }}</p>
-                        <p class=" text-white text-sm">By {{ $product->name }}</p>
+                        <p class=" text-white text-sm">
+                            @if ($product->product == "Game")
+                                On
+                            @else
+                                By
+                            @endif {{ $product->name }}
+                        </p>
                         <p class=" text-white text-sm">${{ $product->price }}</p>
                     </div>
                 </div>

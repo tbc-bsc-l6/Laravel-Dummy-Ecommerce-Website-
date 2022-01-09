@@ -13,6 +13,8 @@
                 <h1>Create product</h1>
             </div>
 
+            <input type="hidden" name="image" value="{{ rand(1,9) }}">
+
             <select name="product" class="w-full mt-6" required>
                 <option value="Book">Book</option>
                 <option value="Cd">CD</option>

@@ -16,6 +16,8 @@
                 <h1>Edit product</h1>
             </div>
             
+            <input type="hidden" name="image" value="{{ $product->image }}">
+
             <select name="product" class="w-full mt-6" required>
                 <option value="Book" @if ($product->product == "Book") selected @endif>Book</option>
                 <option value="Cd" @if ($product->product == "Cd") selected @endif>CD</option>

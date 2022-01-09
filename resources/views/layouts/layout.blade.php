@@ -17,11 +17,16 @@
 </head>
 <body>
     <section class="bg-neutral-900 flex justify-between">
-        <a href="/">
-            <div class="p-4">
-                <img src="../../images/logo.png" alt="" class="w-8 h-8">
-            </div>
-        </a>
+        <div class="flex">
+            <a href="/">
+                <div class="p-4 w-max">
+                    <img src="../../images/logo.png" alt="" class="w-8 h-8">
+                </div>
+            </a>
+            @auth
+                <span class="text-white font-semibold p-4 text-lg">{{ auth()->user()->name }}</span>
+            @endauth
+        </div>
         <div class="p-4 text-lg text-white font-semibold flex">
             <div class="mr-2">
                 <form action="" method="GET">
@@ -31,8 +36,18 @@
             <ul class="flex justify-end">
                 <li class="px-4"><a href="#">Home</a></li>
                 <li class="px-4"><a href="/all-products">Products</a></li>
-                <li class="px-4"><a href="/login">Login</a></li>
-                <li class="px-4"><a href="/register">Register</a></li>
+                @auth
+                    <li class="px-4">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li class="px-4"><a href="/login">Login</a></li>
+                    <li class="px-4"><a href="/register">Register</a></li>
+                @endauth
             </ul>
         </div>
     </section>

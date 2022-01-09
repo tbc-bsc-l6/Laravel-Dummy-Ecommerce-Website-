@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -101,6 +102,7 @@ class ProductController extends Controller
             'name' => ['required', 'max:255'],
             'feature' => ['required'],
             'price' => ['required'],
+            'image' => ['required'],
         ]);
     }
 }
