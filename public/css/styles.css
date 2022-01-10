@@ -1,9 +1,9 @@
 .material-icons.delete{
-    color: darkred;
+    color: black;
 }
 
 .material-icons.edit{
-    color: cornflowerblue;
+    color: black;
 }
 
 /* .material-icons.search{
@@ -69,4 +69,64 @@ input:focus{
 
 .items-stretch {
 align-items: stretch;
+}
+
+.whitespace-nowrap{
+    white-space: nowrap;
+}
+
+@media (max-width: 1440px) {
+    
+    .md\:image{
+        width: 500px;
+        height: auto;
+    }
+
+    .md\:text-h1{
+        font-size: 2.5rem;
+    }
+    .md\:text-p{
+        font-size: 1rem;
+    }
+    
+    .md\:p-10{
+        padding: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 900px) {
+
+    .sm\:text-sm{
+        font-size: 0.8rem;
+    }
+
+    .sm\:flex-wrap{
+        flex-wrap: wrap;
+    }
+
+    .sm\:image{
+        width: 100%;
+    }
+
+    .sm\:width{
+        width: 100%;
+    }
+    
+    .sm\:width-sm{
+        width: 20ch;
+    }
+
+    .sm\:p-5{
+        padding: 2.5rem 1rem;
+    }
+
+    .sm\:bg-gray-200{
+        --tw-bg-opacity: 1;
+        background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    }
+
+    .sm\:flex-reverse{
+        flex-direction: column-reverse;
+    }
 }

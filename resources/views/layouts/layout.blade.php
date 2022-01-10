@@ -24,20 +24,20 @@
                 </div>
             </a>
             @auth
-                <span class="text-white font-semibold p-4 text-lg">{{ auth()->user()->name }}</span>
+                <span class="text-white font-semibold p-4 text-lg sm:text-sm whitespace-nowrap">{{ auth()->user()->name }}</span>
             @endauth
         </div>
         <div class="p-4 text-lg text-white font-semibold flex">
             <div class="mr-2">
                 <form action="" method="GET">
-                    <input type="text" name="search" placeholder="Search a product" value="{{ request('search') }}" class="h-6 w-60 pr-4 border-b-white bg-neutral-900 text-white">
+                    <input type="text" name="search" placeholder="Search a product" value="{{ request('search') }}" class="h-6 w-60 pr-4 border-b-white bg-neutral-900 text-white sm:text-sm sm:width-sm">
                 </form>
             </div>
             <ul class="flex justify-end">
-                <li class="px-4"><a href="#">Home</a></li>
-                <li class="px-4"><a href="/all-products">Products</a></li>
+                <li class="px-4 sm:text-sm"><a href="#">Home</a></li>
+                <li class="px-4 sm:text-sm"><a href="/all-products">Products</a></li>
                 @auth
-                    <li class="px-4">
+                    <li class="px-4 sm:text-sm">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -45,8 +45,8 @@
                         </form>
                     </li>
                 @else
-                    <li class="px-4"><a href="/login">Login</a></li>
-                    <li class="px-4"><a href="/register">Register</a></li>
+                    <li class="px-4 sm:text-sm"><a href="/login">Login</a></li>
+                    <li class="px-4 sm:text-sm"><a href="/register">Register</a></li>
                 @endauth
             </ul>
         </div>

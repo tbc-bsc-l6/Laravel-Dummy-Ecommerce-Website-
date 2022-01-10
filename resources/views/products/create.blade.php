@@ -19,24 +19,29 @@
                 <option value="Book">Book</option>
                 <option value="Cd">CD</option>
                 <option value="Game">Game</option>
-            </select><br><br>
-            <input type="text" name="title" placeholder="Title" value="{{ old('title') }}" class="w-full" required><br><br>
+            </select>
+
+            <input type="text" name="title" placeholder="Title" value="{{ old('title') }}" class="w-full mt-6" required>
             @error('title')
-                <p class="text-red-600 text-xs">{{ $message }}</p>
+                <p class="text-red-600 text-xs mt-2">{{ $message }}</p>
             @enderror
-            <input type="text" name="name" placeholder="Author/Artist/Console" value="{{ old('name') }}" class="w-full" required><br><br>
+            
+            <input type="text" name="name" placeholder="Author/Artist/Console" value="{{ old('name') }}" class="w-full mt-6" required>
             @error('name')
-                <p class="text-red-600 text-xs">{{ $message }}</p>
+                <p class="text-red-600 text-xs mt-2">{{ $message }}</p>
             @enderror
-            <input type="text" name="feature" placeholder="Pages/Duration/PEGI" value="{{ old('feature') }}" class="w-full" required><br><br>
+            
+            <input type="text" name="feature" placeholder="Pages/Duration/PEGI" value="{{ old('feature') }}" class="w-full mt-6" required>
             @error('feature')
-                <p class="text-red-600 text-xs">{{ $message }}</p>
+                <p class="text-red-600 text-xs mt-2">{{ $message }}</p>
             @enderror
-            <input type="number" name="price" placeholder="Price" value="{{ old('price') }}" class="w-full" required><br><br>
+            
+            <input type="number" name="price" placeholder="Price" value="{{ old('price') }}" class="w-full mt-6" required>
             @error('price')
-                <p class="text-red-600 text-xs">{{ $message }}</p>
+                <p class="text-red-600 text-xs mt-2">{{ $message }}</p>
             @enderror
-            <input type="submit" value="Post" class="text-white bg-neutral-900 p-2 w-20 rounded">
+            
+            <input type="submit" value="Post" class="text-white bg-neutral-900 p-2 mt-6 w-20 rounded">
         </form>
     </div>
 @endsection

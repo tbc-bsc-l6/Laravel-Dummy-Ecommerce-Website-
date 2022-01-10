@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller
@@ -17,6 +18,8 @@ class ProductController extends Controller
      */
     public function index()
     {
+
+        $this->authorize('admin');
         $products = Product::latest()->search(request(['search','category']))->paginate(12)->withQueryString();
         
         return view('products.index', ['products' => $products]);
@@ -29,6 +32,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $this->authorize('admin');
         return view('products.create');
     }
 
@@ -40,6 +44,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('admin');
         Product::create($this->validateProduct());
 
         session()->flash('success', 'The product has been created.');
@@ -66,6 +71,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $this->authorize('admin');
         return view('products.edit', ['product' => $product]);
     }
 
@@ -78,6 +84,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+        $this->authorize('admin');
         $product->update($this->validateProduct());
         return redirect('/products');
     }
@@ -90,6 +97,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $this->authorize('admin');
         $product->delete();
 
         return redirect('/products');
@@ -98,8 +106,8 @@ class ProductController extends Controller
     protected function validateProduct(){
         return request()->validate([
             'product' => ['required'],
-            'title' => ['required', 'max:255'],
-            'name' => ['required', 'max:255'],
+            'title' => ['required', 'min:3', 'max:255'],
+            'name' => ['required', 'min:3', 'max:255'],
             'feature' => ['required'],
             'price' => ['required'],
             'image' => ['required'],
