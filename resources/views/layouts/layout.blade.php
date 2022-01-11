@@ -19,7 +19,7 @@
     <section class="bg-neutral-900 flex justify-between">
         <div class="flex">
             <a href="/">
-                <div class="p-4 w-max">
+                <div class="p-4 ml-4 w-max">
                     <img src="../../images/logo.png" alt="" class="w-8 h-8">
                 </div>
             </a>
@@ -34,9 +34,11 @@
                 </form>
             </div>
             <ul class="flex justify-end">
-                <li class="px-4 sm:text-sm"><a href="#">Home</a></li>
                 <li class="px-4 sm:text-sm"><a href="/all-products">Products</a></li>
                 @auth
+                    @admin
+                        <li class="px-4 sm:text-sm"><a href="/products">Dashboard</a></li>
+                    @endadmin
                     <li class="px-4 sm:text-sm">
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 

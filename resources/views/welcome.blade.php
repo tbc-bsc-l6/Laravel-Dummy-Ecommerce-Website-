@@ -11,7 +11,7 @@
             <div class="p-20 sm:bg-gray-200 sm:p-5 sm:width">
                 <h1 class="font-semibold text-neutral-900 text-6xl md:text-h1">A collection of handpicked books.</h1>
                 <p class="text-lg md:text-p mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <a href="/all-products?category=Book"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6">Shop Books</button></a>
+                <a href="/all-products?category=Book"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6 button-width">Shop Books</button></a>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
             <div class="p-20 sm:bg-gray-200 sm:p-5 sm:width">
                 <h1 class="font-semibold text-neutral-900 text-6xl md:text-h1">Hundreds of the most popular hits right now.</h1>
                 <p class="text-lg md:text-p mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <a href="/all-products?category=Cd"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6">Shop Cds</button></a>
+                <a href="/all-products?category=Cd"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6 button-width">Shop Cds</button></a>
             </div>
             <img src="../../images/cds.jpg" width="800px" class="object-contain md:image sm:image">
         </div>
@@ -29,7 +29,7 @@
             <div class="p-20 sm:bg-gray-200 sm:p-5 sm:width">
                 <h1 class="font-semibold text-neutral-900 text-6xl md:text-h1">The best games on every console.</h1>
                 <p class="text-lg md:text-p mt-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <a href="/all-products?category=Game"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6">Shop Games</button></a>
+                <a href="/all-products?category=Game"><button class="bg-neutral-900 text-white md:text-p p-2 mt-6 button-width">Shop Games</button></a>
             </div>
         </div>
     </section>

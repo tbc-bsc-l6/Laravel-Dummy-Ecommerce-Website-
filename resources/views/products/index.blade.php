@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    Index
+    Dashboard
 @endsection
 
 @section('body')
@@ -30,11 +30,11 @@
         </div>
         <table class="bg-gray-100 w-full border mb-4 mt-8">
             <tr class="text-center text-lg h-10">
-                <td class="font-bold w-60 border">Title</td>
-                <td class="font-bold w-60 border">Name</td>
-                <td class="font-bold w-60 border">Feature</td>
-                <td class="font-bold w-60 border">Price</td>
-                <td class="font-bold w-60 border">Type</td>
+                <td class="font-bold w-96 border">Title</td>
+                <td class="font-bold w-96 border">Name</td>
+                <td class="font-bold w-48 border">Feature</td>
+                <td class="font-bold w-48 border">Price</td>
+                <td class="font-bold w-48 border">Type</td>
                 <td class="font-bold w-60 border">Actions</td>
             </tr>
             @foreach ($products as $product)

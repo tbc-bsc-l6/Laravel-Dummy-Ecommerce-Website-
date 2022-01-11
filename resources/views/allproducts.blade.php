@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title')
+    Our collection
+@endsection
+
 @section('body')
     <div class="flex justify-between w-full px-20 mt-8 text-black text-5xl font-semibold">
         <h1>
