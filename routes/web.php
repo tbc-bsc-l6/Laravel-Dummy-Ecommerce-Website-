@@ -27,10 +27,9 @@ Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('homepage');
 
-Route::get('/all-products', [HomepageController::class, 'getAllProducts']);
-// Route::get('/all-products', [HomepageController::class, 'categorizeProducts']);
+Route::get('/all-products', [HomepageController::class, 'getAllProducts'])->name('display-products');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
