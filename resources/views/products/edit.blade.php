@@ -13,7 +13,7 @@
             @method('put')
 
             <div class="w-full text-black text-5xl font-semibold">
-                <h1>Edit a product</h1>
+                <h1 class="mm:text-h1">Edit a product</h1>
             </div>
             
             <input type="hidden" name="image" value="{{ $product->image }}">

@@ -5,8 +5,8 @@
 @endsection
 
 @section('body')
-    <div class="flex justify-between w-full px-20 mt-8 text-black text-5xl font-semibold">
-        <h1>
+    <div class="flex justify-between w-full px-20 mt-8 text-black text-5xl font-semibold sm:flex-wrap">
+        <h1 class="mm:text-h1">
             <a href="/all-products">All products</a> 
             @if (request('category') ?? false)
                 @if (request('category') == "Book")
@@ -28,7 +28,7 @@
         </form>
     </div>
 
-    <div class="container gap-16 mx-20 my-8">
+    <div class="container mx-20 my-8">
         @foreach ($allproducts as $product)
             <a href="/products/{{ $product->id }}">
                 <div class="overflow-hidden shadow-lg shadow-gray-700">

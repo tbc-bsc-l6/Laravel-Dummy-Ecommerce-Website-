@@ -5,9 +5,9 @@
 @endsection
 
 @section('body')
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto p-4">
         <div class="flex justify-between w-full mt-8 text-black text-5xl font-semibold">
-            <h1>
+            <h1 class="mm:text-h1">
                 <a href="/products">All products</a> 
                 @if (request('category') ?? false)
                     @if (request('category') == "Book")
@@ -44,7 +44,7 @@
                     <td class="p-2 border-r">{{ $product['feature'] }}</td>
                     <td class="p-2 border-r">{{ $product['price'] }}</td>
                     <td class="p-2 border-r">{{ $product['product'] }}</td>
-                    <td class="flex justify-center pt-2">
+                    <td class="flex justify-center pt-2 sm:flex-wrap">
                         <a href="/products/{{ $product['id'] }}/edit">
                             <span class="material-icons edit md-24 mr-2 ml-2">
                                 edit
@@ -70,7 +70,7 @@
         </table>
 
         
-        <a href="/products/create" class="text-black text-lg font-bold mt-8 hover:text-indigo-600">Add new product</a>
+        <a href="/products/create"><button class="text-white font-semibold mt-8 p-2 bg-neutral-900 rounded">Add new product</button></a>
     
         <div class="mt-8">{{ $products->links() }}</div>
     </div>

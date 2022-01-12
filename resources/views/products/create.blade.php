@@ -10,7 +10,7 @@
             @csrf
 
             <div class="w-full text-black text-5xl font-semibold">
-                <h1>Create a product</h1>
+                <h1 class="mm:text-h1">Create a product</h1>
             </div>
 
             <input type="hidden" name="image" value="{{ rand(1,9) }}">

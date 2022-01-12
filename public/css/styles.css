@@ -51,9 +51,22 @@
     margin-right: 5rem/* 80px */;
 }
 
+.mx-8{
+    margin-left: 2rem;
+    margin-right : 2rem;
+}
+
 .my-8 {
     margin-top: 2rem/* 32px */;
     margin-bottom: 2rem/* 32px */;
+}
+
+.mr-4{
+    margin-right: 1rem;
+}
+
+.mb-10{
+    margin-bottom: 1rem;
 }
 
 .px-20 {
@@ -92,6 +105,56 @@ align-items: stretch;
 
 .button-width{
     width: 8rem;
+}
+
+.display-none{
+    display: none;
+}
+
+.nav-select{
+    background: none;
+    outline: none;
+}
+
+.toggle-menu-btn{
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.click-area{
+    cursor: pointer;
+}
+
+.hamburger{
+    width: 26px;
+    height: 2px;
+    background: white;
+    margin-top: 4px;
+}
+
+.sidebar{
+    display: none;
+}
+
+.side-menu-bar{
+    position: absolute;
+    width: 250px;
+    height: max-content;
+    top: 68px;
+    display: none;
+}
+
+.side-menu-bar ul li:hover{
+    background: rgb(58, 55, 55);
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    height: 26px;
+    padding: 0 40px;
+    text-align: center;
 }
 
 @media (max-width: 1440px) {
@@ -172,5 +235,22 @@ align-items: stretch;
 
     .sm\:flex-reverse{
         flex-direction: column-reverse;
+    }
+
+    .sm\:display-none{
+        display: none;
+    }
+
+    .sm\:display-block{
+        display: block;
+    }
+
+    .sidebar{
+        display: block;
+    }
+
+    .side-menu-bar.active{
+        right: 8px;
+        display: block;
     }
 }
