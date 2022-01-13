@@ -37,8 +37,12 @@
 
                     <p class="mt-6 text-gray-200 mm:text-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore modi maxime consequuntur tenetur aspernatur sapiente eos! Porro quas facilis unde repellat possimus aperiam nostrum, fugit eligendi? Est sint esse ipsam?</p>
                     <p class="mt-6 text-gray-200 mm:text-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati deserunt perspiciatis aut quam facilis nulla tempore, omnis provident veniam quibusdam nobis necessitatibus? A perferendis nisi cupiditate. Aliquid corrupti molestias fuga.</p>
-                
-                    <button class="text-neutral-900 bg-white font-semibold p-2 mt-6 w-20 rounded">Buy now</button>
+                    
+                    @admin
+
+                    @else
+                        <button class="text-neutral-900 bg-white font-semibold p-2 mt-6 w-20 rounded">Buy now</button>
+                    @endadmin
                 </div>
             </div>
         </div>
