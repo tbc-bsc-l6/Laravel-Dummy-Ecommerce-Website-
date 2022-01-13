@@ -74,6 +74,10 @@
     padding-right: 5rem/* 80px */;
 }
 
+.pb-20{
+    padding-bottom: 4rem;
+}
+
 .border-b-white{
     border: 0px solid transparent;
     border-bottom: 0px solid white;
@@ -155,6 +159,11 @@ align-items: stretch;
     height: 26px;
     padding: 0 40px;
     text-align: center;
+    margin-top: 5rem;
+}
+
+.mb-8{
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 1440px) {

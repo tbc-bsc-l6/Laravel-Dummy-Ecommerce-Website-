@@ -99,9 +99,9 @@
     </div>
     @endif
 
-    <div class="footer w-full bg-neutral-900">
+    <footer class="footer w-full bg-neutral-900 mt-4">
         <p class="text-white">&copy; Raman Shakya, 2022</p>
-    </div>
+    </footer>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>

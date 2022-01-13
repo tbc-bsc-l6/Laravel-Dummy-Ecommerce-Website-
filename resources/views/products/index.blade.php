@@ -72,7 +72,7 @@
         
         <a href="/products/create"><button class="text-white font-semibold mt-8 p-2 bg-neutral-900 rounded">Add new product</button></a>
     
-        <div class="mt-8">{{ $products->links() }}</div>
+        <div class="mt-8 pb-20">{{ $products->links() }}</div>
     </div>
 
     

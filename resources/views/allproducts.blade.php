@@ -49,7 +49,7 @@
         @endforeach
     </div>
 
-    <div class="px-20 pb-3 mb-4">
+    <div class="px-20 pb-20">
         {{ $allproducts->links() }}
     </div>
 @endsection
